@@ -31,8 +31,19 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees")
-    public List<Employee> retrieveAllEmployee(@RequestBody Employee employee) {
-        return service.findAll();
+    public List<Employee> retrieveAllEmployee() {
+         return service.findAll();
+    }
+
+    @GetMapping("/employees/count")
+    public long count() {
+        return service.count();
+    }
+
+
+    @GetMapping("/employees/page/sort")
+    public List<Employee> retrieveAllEmployeeWithPaginationAndSorting() {
+        return service.findAllWithPaginationAndSorting();
     }
 
 }
