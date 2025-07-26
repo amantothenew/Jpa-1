@@ -46,4 +46,21 @@ public class EmployeeController {
         return service.findAllWithPaginationAndSorting();
     }
 
+    @GetMapping("/by-name")
+    public List<Employee> getByName(@RequestParam String name) {
+        return service.getByName(name);
+    }
+
+    @GetMapping("/by-prefix")
+    public List<Employee> getByNamePrefix(@RequestParam String prefix) {
+        return service.getBySimilarity(prefix);
+    }
+
+    @GetMapping("/by-age")
+    public List<Employee> getByAgeBracket(
+            @RequestParam int startAge,
+            @RequestParam int endAge) {
+        return service.getByAgebracket(startAge, endAge);
+    }
+
 }

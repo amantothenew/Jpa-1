@@ -50,8 +50,15 @@ public class EmployeeService {
         return repository.findAll(page).getContent();
     }
 
+    public List<Employee> getByName(String name) {
+        return repository.findByName(name);
+    }
 
+    public List<Employee> getBySimilarity(String prefix) {
+        return repository.findByNameStartingWith(prefix);
+    }
 
-
-
+    public List<Employee> getByAgebracket(int startAge, int endAge) {
+        return repository.findByAgeBetween(startAge, endAge);
+    }
 }
