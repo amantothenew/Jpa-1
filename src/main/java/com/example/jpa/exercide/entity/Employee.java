@@ -2,10 +2,10 @@ package com.example.jpa.exercide.entity;
 
 import jakarta.persistence.*;
 
-import javax.annotation.processing.Generated;
 
 @Entity
 public class Employee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
